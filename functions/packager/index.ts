@@ -17,16 +17,16 @@ import findRequires, { IFileData } from "./packages/find-requires";
 import getHash from "./utils/get-hash";
 
 import { VERSION } from "../config";
-import env from "./config.secret";
+// import env from "./config.secret";
 import resolve = require("resolve");
 import { packageFilter } from "./utils/resolver";
 
 const { BUCKET_NAME } = process.env;
 const SAVE_TO_S3 = !process.env.DISABLE_CACHING;
 
-if (env.SENTRY_URL) {
-  Raven.config(env.SENTRY_URL!).install();
-}
+// if (env.SENTRY_URL) {
+//   Raven.config(env.SENTRY_URL!).install();
+// }
 
 const s3 = new S3();
 
